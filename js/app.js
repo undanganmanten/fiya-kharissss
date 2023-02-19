@@ -62,14 +62,26 @@ const timer = () => {
     }, 1000);
 };
 
-const alertProkes = () => {
-    Swal.fire({
-        imageUrl: 'assets/images/prokes.png',
-        imageWidth: 400,
-        imageHeight: 200,
-        imageAlt: 'Protokol Kesehatan',
-      })
+var modal = document.querySelector(".protokol-kesehatan");
+var trigger = document.querySelector(".trigger");
+var closeButton = document.querySelector(".prokes-close-button");
+
+function toggleModal() {
+    setTimeout(() => {
+        modal.classList.toggle("prokes-show-modal");
+    }, 1000);
 }
+
+function windowOnClick(event) {
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
+
 
 const buka = () => {
     document.getElementById('loading').style.display = 'none';
@@ -78,7 +90,6 @@ const buka = () => {
     // login();
     audio.play();
     create_unfinished_task();
-    alertProkes();
 };
 
 const play = (btn) => {
