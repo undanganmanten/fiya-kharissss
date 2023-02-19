@@ -62,6 +62,15 @@ const timer = () => {
     }, 1000);
 };
 
+const alertProkes = () => {
+    Swal.fire({
+        imageUrl: 'assets/images/prokes.png',
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: 'Protokol Kesehatan',
+      })
+}
+
 const buka = () => {
     document.getElementById('loading').style.display = 'none';
     document.getElementById('tombol-musik').style.display = 'block';
@@ -69,6 +78,7 @@ const buka = () => {
     // login();
     audio.play();
     create_unfinished_task();
+    alertProkes();
 };
 
 const play = (btn) => {
