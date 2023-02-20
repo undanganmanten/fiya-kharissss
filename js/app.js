@@ -70,7 +70,7 @@ var closeButton = document.querySelector(".prokes-close-button");
 function toggleModal() {
     setTimeout(() => {
         modal.classList.toggle("prokes-show-modal");
-    }, 1000);
+    }, 100);
 }
 
 function windowOnClick(event) {
